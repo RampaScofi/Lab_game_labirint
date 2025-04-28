@@ -1,15 +1,21 @@
+#ifndef TEST
 #include "Model.h"
 #include "View.h"
 #include "Controller.h"
+#include <iostream>
 
 int main() {
-    Model model;
-    model.loadLevel("levels/level4.txt");
-
-    View view(model);
-    Controller controller(model, view);
-
-    controller.run();
-
+    try {
+        Model model;
+        model.loadLevel("levels/level3.txt");
+        View view(model);
+        Controller controller(model, view);
+        controller.run();
+    }
+    catch (const std::exception& e) {
+        std::cerr << "Îøèáêà: " << e.what() << std::endl;
+        return 1;
+    }
     return 0;
 }
+#endif

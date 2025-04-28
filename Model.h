@@ -19,6 +19,7 @@ public:
     const std::vector<std::string>& getMap() const { return map; }
 
 private:
+    void logError(const std::string& message) const;
     std::vector<std::string> map;
     int levelWidth = 0, levelHeight = 0;
     int playerX = 0, playerY = 0;
